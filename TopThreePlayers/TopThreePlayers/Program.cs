@@ -44,14 +44,14 @@ namespace TopThreePlayers
 
         private void ShowTopPlayersByLevel()
         {
-            _players = _players.OrderByDescending(player => player.Level).Take(_maxTopPlayers).ToList();
-            ShowPlayersInfo(_players);
+            var topLevel = _players.OrderByDescending(player => player.Level).Take(_maxTopPlayers).ToList();
+            ShowPlayersInfo(topLevel);
         }
 
         private void ShowTopPlayersByPower()
         {
-            _players = _players.OrderByDescending(player => player.Power).Take(_maxTopPlayers).ToList();
-            ShowPlayersInfo(_players);
+            var topPower = _players.OrderByDescending(player => player.Power).Take(_maxTopPlayers).ToList();
+            ShowPlayersInfo(topPower);
         }
 
         private void ShowPlayersInfo(List<Player> players)
